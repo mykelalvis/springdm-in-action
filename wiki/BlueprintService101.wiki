@@ -28,4 +28,71 @@ You'll be prompted for several choices:
   * the version: default, just type {{{Enter}}}
   * confirmation: type {{{Enter}}}
 
-This creates 
+This creates a {{{blueprint101}}} directory, where lies a standard Maven 2 project. In the {{{src/main/java/com/manning/sdmia}}}, create a {{{BlueprintBean}}} class with the following content:
+
+{{{
+package com.manning.sdmia;
+
+public class BlueprintBean {
+
+  public BlueprintBean() {
+    System.out.println("Blueprint Bean created!");
+  }
+	
+}
+}}}
+
+It's now time to create the descriptor of the bundle's Blueprint container. This descriptor is a XML file and must be in the {{{OSGI-INF/blueprint}}} directory of the bundle. Create the {{{src/main/resources/OSGI-INF/blueprint}}} directory and a create a {{{bundle-context.xml}}} file in it. Here is the content of the descriptor:
+
+{{{
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="
+    http://www.osgi.org/xmlns/blueprint/v1.0.0 
+    http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd">
+
+  <!-- create the bean -->
+  <bean id="blueprintBean" class="com.manning.sdmia.BlueprintBean" />      	
+   	
+  <!-- export the bean on the service registry -->
+  <service ref="blueprintBean" interface="com.manning.sdmia.BlueprintBean" />   	
+   	
+</blueprint>
+}}}
+
+The next step is to package the project as an OSGi bundle.
+
+= Packaging the bundle =
+
+We'll use the [http://felix.apache.org/site/apache-felix-maven-bundle-plugin-bnd.html Apache Felix Bundle Plugin] for packaging our Maven 2 project as an OSGi bundle. Here are the steps to do so:
+  * change the packaging of the bundle from {{{jar}}} to {{{bundle}}}
+  * add a plugin configuration entry in the {{{build}}} element of the POM file.
+
+Here is how the {{{pom.xml}}} should look like once modified to use the Felix Bundle Plugin:
+
+{{{
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+    http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.manning.sdmia</groupId>
+  <artifactId>blueprint101</artifactId>
+  <packaging>bundle</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>blueprint101</name>
+	
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <version>2.0.0</version>
+        <extensions>true</extensions>
+      </plugin>
+    </plugins>
+  </build>
+	
+</project>
+}}}
