@@ -108,7 +108,7 @@ It will create the JAR file in the {{{target}}} directory.
 
 = Deploying the Blueprint-powered bundle =
 
-To deploy the bundle on a OSGi container, you need to provision the latter with the Blueprint API and an implementation. You can find a ready-to-use Equinox here (it uses the 20090904 snapshot of the Uber Blueprint RI bundle, which embeds all the necessary bundles, including the Spring 3.0 ones).
+To deploy the bundle on a OSGi container, you need to provision the latter with the Blueprint API and an implementation. You can find a ready-to-use Equinox [http://springdm-in-action.googlecode.com/files/springdm-in-action-20090720.zip here] (it uses the 20090904 snapshot of the Uber Blueprint RI bundle, which embeds all the necessary bundles, including the Spring 3.0 ones).
 
 Unzip the Equinox distribution in a working directory and copy the JAR file of the bundle in it (beside the Equinox JAR). Equinox is configured with a {{{config.ini}}} file, which lies in the {{{configuration}}} directory. Edit this file to add the bundle JAR in the installed bundles (last line):
 
