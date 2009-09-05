@@ -180,16 +180,16 @@ com.manning.sdmia.blueprint101_1.0.0.SNAPSHOT [4]
 
 }}}
 
-Congrats, this is first Blueprint-powered bundle!
+Congrats, this is your first Blueprint-powered bundle!
 
 = Summary =
 
 We created a very simple bundle, that contains an object and exports it as an OSGi service. The Blueprint service created and published the service on our behalf. This is particularly convenient, as we don't need to use the OSGi API (create an activator for the bundle, create the object in the activator and publish it, etc.). This is not really impressive, as we have only one bundle and one service, but imagine we had dozens of bundles and hundreds of services: configuring each bundle programmatically and checking if its dependencies are in the service registry would be a nightmare. That's where the Blueprint service becomes essential, as it's able to compute the dependency graph to create and configure the inner components of each bundle in a safe and reliable way. 
 
-Those used to Spring DM do not discover much, as the Blueprint Service is a standardization of Spring DM. Just think that now, most of the Spring lightweight container features are available as a _standard_ in OSGi and that you'll be able to _choose_ which the Blueprint implementation that suits you best (as soon as other implementations will appear!).
+Those used to Spring DM do not discover much, as the Blueprint Service is a standardization of Spring DM. Just think that now, most of the Spring lightweight container features are available as a _standard_ in OSGi and that you'll be able to _choose_ the Blueprint implementation that suits you best (as soon as other implementations will appear!).
 
 = References =
 
-* [http://www.springsource.org/osgi/ Spring Dynamic Modules]
-* [http://jbossosgi.blogspot.com/2009/04/osgi-blueprint-service-rfc-124.html Overview of the Blueprint Service] (somewhat outdated)
-* [http://www.osgi.org OSGi]
+  * [http://www.springsource.org/osgi/ Spring Dynamic Modules]
+  * [http://jbossosgi.blogspot.com/2009/04/osgi-blueprint-service-rfc-124.html Overview of the Blueprint Service] (somewhat outdated)
+  * [http://www.osgi.org OSGi]
