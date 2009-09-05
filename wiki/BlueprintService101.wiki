@@ -1,8 +1,8 @@
-#summary Tutorial for [http://www.springsource.org/osgi/ Spring DM] Blueprint Reference Implementation
+#summary Tutorial for Spring DM Blueprint Reference Implementation
 
 = Introduction =
 
-Add your content here.
+seome [http://www.springsource.org/osgi/ Spring DM]
 
 
 = Details =
