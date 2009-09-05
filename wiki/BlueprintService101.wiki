@@ -1,4 +1,5 @@
 #summary Tutorial for Spring DM Blueprint Reference Implementation
+#labels Featured
 
 = Introduction =
 
