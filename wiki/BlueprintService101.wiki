@@ -4,14 +4,28 @@
 
 The [http://www.osgi.org OSGi] Blueprint Service aims at instantiating, configuring and assembling the inner components of an OSGi bundle. It also allows interacting with the OSGi service registry (register/consume services) in a declarative way.
 
-The Blueprint Service (a.k.a RFC-124) has been introduced in the OSGi specifiation in its 4.2 version and is a standardisation 
+The Blueprint Service (a.k.a RFC-124) has been introduced in the 4.2 version of the OSGi specifiation and is a standardization of [http://www.springsource.org/osgi/ Spring DM]. So, think of the Blueprint Service as a component model for the inner assembling of OSGi bundles and a tool to publish/consume OSGi services in a reliable way, without having to use the OSGi API at all.
 
- [http://www.springsource.org/osgi/ Spring DM]
+This page is a tutorial to introduce the Reference Implementation of the Blueprint Service, Spring DM 2.0. You'll learn how to associate a Blueprint Container to an OSGi bundle. This container will contain a simple bean, which will be registered declaratively on the service registry.
 
+Prerequisites:
+  * basic understanding of OSGi
+  * Maven 2 installed
 
-= Details =
+= Creating the bundle =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+In a working directory, create a Maven 2 project with the following command:
+
+{{{
+mvn archetype:generate
+}}}
+
+You'll be prompted for several choices:
+  * archetype to use: choose the default (15, a basic Maven 2 project), just type {{{Enter}}}
+  * the group of the project: {{{com.manning.sdmia}}}
+  * the artifact id: {{{blueprint101}}}
+  * the defaut package: default, just type {{{Enter}}}
+  * the version: default, just type {{{Enter}}}
+  * confirmation: type {{{Enter}}}
+
+This creates 
