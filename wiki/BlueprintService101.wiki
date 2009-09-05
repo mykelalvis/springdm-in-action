@@ -2,7 +2,11 @@
 
 = Introduction =
 
-seome [http://www.springsource.org/osgi/ Spring DM]
+The [http://www.osgi.org OSGi] Blueprint Service aims at instantiating, configuring and assembling the inner components of an OSGi bundle. It also allows interacting with the OSGi service registry (register/consume services) in a declarative way.
+
+The Blueprint Service (a.k.a RFC-124) has been introduced in the OSGi specifiation in its 4.2 version and is a standardisation 
+
+ [http://www.springsource.org/osgi/ Spring DM]
 
 
 = Details =
