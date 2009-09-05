@@ -25,8 +25,8 @@ You'll be prompted for several choices:
   * archetype to use: choose the default (15, a basic Maven 2 project), just type {{{Enter}}}
   * the group of the project: {{{com.manning.sdmia}}}
   * the artifact id: {{{blueprint101}}}
-  * the defaut package: default, just type {{{Enter}}}
   * the version: default, just type {{{Enter}}}
+  * the defaut package: default, just type {{{Enter}}}
   * confirmation: type {{{Enter}}}
 
 This creates a {{{blueprint101}}} directory, where lies a standard Maven 2 project. In the {{{src/main/java/com/manning/sdmia}}}, create a {{{BlueprintBean}}} class with the following content:
